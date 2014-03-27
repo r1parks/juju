@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p id="demo">Verifying your location...</p>
+<button onclick="getLocation()">Try It</button>
+<button onClick="history.go(0)">Refresh!</button>
+
+<script>
+    var x=document.getElementById("demo");
+    window.onload = function getLocation()
+    {
+        if (navigator.geolocation)
+        {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        }
+        else
+        {
+            x.innerHTML="Location verification failed. This application requires geoloation support.";
+        }
+    }
+    function showPosition(position)
+    {
+        x.innerHTML="Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;	
+    }
+</script>
+
+</body>
+</html>
+
