@@ -19,7 +19,7 @@
     function getBill(position) {
         var lat=position.coords.latitude;
         var lon=position.coords.longitude;
-        $.get( "http://184.73.50.25:8080/getbill/LocVer?lat="+lat+"&lon="+lon+"&id=1", function( data ) {
+        $.get( "http://184.73.50.25:8080/getbill/LocVer?lat="+lat+"&lon="+lon+"&id=2", function( data ) {
             window.location.replace(data);
         });
     }
