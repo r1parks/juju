@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+</head>
+<body>
+
+<div data-role="page" id="pageone">
+    <div data-role="header">
+        <h1>Some Restaurant!</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <form id="bill-items">
+            <input type="checkbox" name="item0" id="item0" data-theme="a" data-price="10.99">
+            <label for="item0">Food Item 1 $10.99</label>
+            <input type="checkbox" name="item1" id="item1" data-theme="a" data-price="19.94">
+            <label for="item1">Drink Item 1 $19.94</label>
+        </form>
+    </div>
+
+    <div>
+        <button id="total" class="ui-button">0.00</button>
+    </div>
+</div> 
+
+<script>
+    $('#bill-items :checkbox').click(function(e) {
+        var total_bill = parseFloat( $('#total').html() );
+        var item_cost = parseFloat( $(this).data("price") );
+        if($(this).is(':checked')) {
+            $('#total').html((total_bill + item_cost) + '');
+        } else {
+            $('#total').html((total_bill - item_cost) + '');
+        }
+
+    });
+</script>
+
+</body>
+</html>
+
