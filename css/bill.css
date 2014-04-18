@@ -1,41 +1,63 @@
-#bill{
+body{
+  background-color: aqua;
   min-width: 600px;
   max-width: 1160px;
-  margin: 20px auto auto 10px;
+}
+#bill{
+  margin: 20px auto 4px auto;
   padding: 10px;
   min-height: 670px;
   background-color: white;
+  border: 2px;
 }
-totals{
+#tipselect{
+  margin: 4px auto 4px auto;
+}
+#paymentinfo{
+  margin: auto;
+  height: 130px;
+}
+#totals{
   float: left;
   width: 65%;
   font-size: 150%;
-  font-color: white;
   background-color: green;
-  margin: 10px;
+  margin: 4px 0px 0px 0px;
+  padding: 2px;
 }
 .totalsText{
-  text-align: left;
-  margin: 10px;
-}
-.totalsAmount{
-  text-align: right;
-  margin: 10px;
-}
-#buttons{
-  float: left;
-}
-#payButton{
-  float:left;
-  width: 30%;
-}
-#splitButton{
   float: left;
   clear: left;
-  width: 30%;
+  font-color: white;
+  margin-left: 4px;
+}
+.totalsAmount{
+  float: right;
+  clear: right;
+  font-color: white;
+  margin-right: 4px;
+}
+#buttons{
+  float: right;
+  max-width: 30%;
+  margin: 4px;
+}
+#payButton{
+  float: right;
+  margin: 4px;
+}
+#splitButton{
+  float: right;
+  clear: right;
+  margin: 4px;
 }
 #restaurantBanner{
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
+  /*position: absolute;
+  left: 0px;*/
+  background-color: rgb(254,224,52)
+  width: 100%;
+}
+#banner{
+  margin-left: auto;
+  margin-right: auto;
 }
