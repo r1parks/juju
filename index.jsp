@@ -19,11 +19,28 @@
     function getBill(position) {
         var lat=position.coords.latitude;
         var lon=position.coords.longitude;
-        $.get( "http://184.73.50.25:8080/getbill/LocVer?lat="+lat+"&lon="+lon+"&id=1", function( data ) {
-            window.location.replace(data);
+        $.get( "http://23.20.59.96:8080/getbill/LocVer?lat="+lat+"&lon="+lon+"&rst="+window.rst+"&tbl="+window.tbl, function( data ) {
+		var datas = data.split(' ');
+		session.setAttribute("uid",datas[1]);
+            window.location.replace(data[0]);
         });
     }
+	function getUrlParameter(sParam)
+	{
+	    var sPageURL = window.location.search.substring(1);
+	    var sURLVariables = sPageURL.split('&');
+	    for (var i = 0; i < sURLVariables.length; i++) 
+	    {
+		var sParameterName = sURLVariables[i].split('=');
+		if (sParameterName[0] == sParam) 
+		{
+		    return sParameterName[1];
+		}
+	    }
+	}
 
+	window.rst=getUrlParameter('rst');
+	window.tbl=getUrlParameter('tbl');
     getLocation();
 </script>
 
