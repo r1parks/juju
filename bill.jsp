@@ -54,8 +54,9 @@ $(document).ready(function() {
 	</table>
     </div>
     <form action="http:// " method="post">
-      <div data-role="fieldcontain" id="tipSelect">
+      <div data-role="fieldcontain">
 	<fieldset data-role="controlgroup" data-type="horizontal">
+        <div class="tipselect">
         <input type="radio" name="tipPercentage" id="tip15" value="15" />
 	<label for="tip15">15%</label>
         <input type="radio" name="tipPercentage" id="tip20" value="20" checked="checked" />
@@ -64,9 +65,10 @@ $(document).ready(function() {
 	<label for="tip25">25%</label>
         <input type="radio" name="tipPercentage" id="tipcustom" value="custom" />
 	<label for="tipcustom">Custom</label>
+        </div>
 	</fieldset>
       </div>
-      <div id="paymentinfo">
+    <div id="paymentinfo">
 	      <div id="totals">
 		<p><span class="totalsText subtotalText">Subtotal:</span><span class="totalsAmount subtotal">$82.00</span></p>
 		<p><span class="totalsText tipText">Tip:</span><span class="totalsAmount tip">$10.00</span></p>
@@ -77,7 +79,7 @@ $(document).ready(function() {
 		<input id="payButton" type="image" src="images/paybutton.png" name="submitButton" value="pay" />
 		<input id="splitButton" type="image" src="images/splitbutton.png" name="submitButton" value="split" />  
 	      </div>
-      </div>
+    </div>
     </form>
 <div id="wrapper">
     <div id="restaurantBanner">
