@@ -5,7 +5,7 @@
 <button onClick="history.go(0)">Refresh!</button>
 
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script>
+<script type="text/javascript">
     function getLocation() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(getBill);
@@ -19,10 +19,8 @@
     function getBill(position) {
         var lat=position.coords.latitude;
         var lon=position.coords.longitude;
-        $.get( "http://23.20.59.96:8080/getbill/LocVer?lat="+lat+"&lon="+lon+"&rst="+window.rst+"&tbl="+window.tbl, function( data ) {
-		var datas = data.split(' ');
-		session.setAttribute("uid",datas[1]);
-            window.location.replace(data[0]);
+        $.get( "http://54.87.17.182:8080/getbill/LocVer?lat="+lat+"&lon="+lon+"&rst="+window.rst+"&tbl="+window.tbl, function( data ) {
+            window.location.replace(data);
         });
     }
 	function getUrlParameter(sParam)
@@ -38,9 +36,8 @@
 		}
 	    }
 	}
-
-	window.rst=getUrlParameter('rst');
-	window.tbl=getUrlParameter('tbl');
+	window.rst = getUrlParameter('rst');
+	window.tbl = getUrlParameter('tbl');
     getLocation();
 </script>
 

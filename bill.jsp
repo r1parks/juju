@@ -1,18 +1,70 @@
 <!DOCTYPE html>
+<%@ page import="java.io.*,java.util.*,java.sql.*"%>
+<%@ page import="javax.servlet.http.*,javax.servlet.*" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
+
 <html>
   <head>
     <title>Pay with JuJu</title>
     <link href="css/bill.css" type="text/css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
   </head>
-  <body>
+
+<script>
+// Don't forget to load the jQuery library before doing this
+// Initialize jQuery
+$(document).ready(function() {
+     // Set the variable $width to the width of our wrapper on page load
+     $width = $('#content').width();
+     // Target all images inside the #content. This works best if you want to ignore certain images that are part of the layout design
+     $('#content img').css({
+          // Using jQuery CSS we write the $width variable we previously specified as a pixel value. We use max-width incase the image is smaller than our viewport it won't scale it larger. Don't forget to set height to auto or else it will squish your photos.
+          'max-width' : $width , 'height' : 'auto'
+          });
+     });
+</script>
+
+<body>
+<div data-role="page" id="billpage">
+<div data-role="header">
+<h1>Bill</h1>
+</div>
+<sql:setDataSource var="database" driver="com.mysql.jdbc.Driver"
+     url="jdbc:mysql://localhost/juju"
+     user="juju"  password="juju"/>
+<sql:query dataSource="${database}" var="result">
+     SELECT * from bills where uid = '1';
+     </sql:query>
     <div id="bill">
+	<table border="" width="100%">
+	<tr>
+	   <th>Item</th>
+	   <th>Price</th>
+	</tr>
+	<c:forEach var="row" items="${result.rows}">
+	<tr>
+	   <td><c:out value="${row.item}"/></td>
+	   <td>$<c:out value="${row.price}"/></td>
+	</tr>
+	</c:forEach>
+	</table>
     </div>
     <form action="http:// " method="post">
-      <div id="tipSelect">
-        <input type="radio" name="tipPercentage" value="15" />15%
-        <input type="radio" name="tipPercentage" value="20" />20%
-        <input type="radio" name="tipPercentage" value="25" />25%
-        <input type="radio" name="tipPercentage" value="custom" />Custom
+      <div data-role="fieldcontain" id="tipSelect">
+	<fieldset data-role="controlgroup" data-type="horizontal">
+        <input type="radio" name="tipPercentage" id="tip15" value="15" />
+	<label for="tip15">15%</label>
+        <input type="radio" name="tipPercentage" id="tip20" value="20" checked="checked" />
+	<label for="tip20">20%</label>
+        <input type="radio" name="tipPercentage" id="tip25" value="25" />
+	<label for="tip25">25%</label>
+        <input type="radio" name="tipPercentage" id="tipcustom" value="custom" />
+	<label for="tipcustom">Custom</label>
+	</fieldset>
       </div>
       <div id="paymentinfo">
 	      <div id="totals">
@@ -27,10 +79,15 @@
 	      </div>
       </div>
     </form>
+<div id="wrapper">
     <div id="restaurantBanner">
+<div id="content">
       <img id="banner" src="images/restaurantbanner.jpg"
            alt="Restaurant Banner"
            title="Restaurant Banner" />
-    </div>
+    </div> 
+</div>
+</div>
+</div>
   </body>
 </html>
