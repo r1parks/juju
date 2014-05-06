@@ -19,7 +19,7 @@
     function getBill(position) {
         var lat=position.coords.latitude;
         var lon=position.coords.longitude;
-        $.get( "http://54.198.166.45:8080/getbill/LocVer?lat="+lat+"&lon="+lon+"&rst="+window.rst+"&tbl="+window.tbl, function( data ) {
+        $.get( "http://54.83.5.31:8080/getbill/LocVer?lat="+lat+"&lon="+lon+"&rst="+window.rst+"&tbl="+window.tbl, function( data ) {
             window.location.replace(data);
         });
     }

@@ -53,7 +53,7 @@ $(document).ready(function() {
 	</c:forEach>
 	</table>
     </div>
-    <form action="http:// " method="post">
+    <form action="http://54.83.5.31:8080/getbill/Paybill" method="post">
       <div data-role="fieldcontain">
 	<fieldset data-role="controlgroup" data-type="horizontal">
         <div class="tipselect">
@@ -63,8 +63,8 @@ $(document).ready(function() {
 	<label for="tip20">20%</label>
         <input type="radio" name="tipPercentage" id="tip25" value="25" />
 	<label for="tip25">25%</label>
-        <input type="radio" name="tipPercentage" id="tipcustom" value="custom" />
-	<label for="tipcustom">Custom</label>
+<!--        <input type="radio" name="tipPercentage" id="tipcustom" value="custom" />
+	<label for="tipcustom">Custom</label> -->
         </div>
 	</fieldset>
       </div>
