@@ -88,7 +88,9 @@
           </div>
           <div id="buttons">
           <input id="payButton" type="image" src="images/paybutton.png" name="submitButton" value="pay" />
+          <a href="www.google.com">
           <input id="splitButton" type="image" src="images/splitbutton.png" name="submitButton" value="split" />  
+          </a>
         </div>
       </div>
     </form>
