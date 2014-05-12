@@ -86,14 +86,12 @@
           <p><span class="totalsText taxText">Tax:</span><span class="totalsAmount tax">$8.00</span></p>
           <p><span class="totalsText totalText">Total:</span><span class="totalsAmount total">$100.00</span></p>
         </div>
-        <input id="payButton" type="image" src="images/paybutton.png" name="submitButton" value="paysplit" />
+        <div id="buttons">
+          <input id="payButton" type="image" src="images/paybutton.png" name="submitButton" value="paysplit" />
+          <input id="splitButton" type="image" src="images/splitbutton.png" name="submitButton" value="paysplit" />
+        </div>
       </div>
     </form>
-    <div id="buttons">
-      <a href="www.google.com">
-        <img src="images/splitbutton.png">
-      </a>
-    </div>
     <div id="wrapper">
       <div id="restaurantBanner">
         <div id="content">
