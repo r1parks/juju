@@ -57,10 +57,14 @@
         <c:forEach var="row" items="${result.rows}">
           <input type="checkbox" 
                  name="items"
-                 id="${counter}" 
+                 id="item${counter}" 
                  data-price="${row.price}"
                  value="${row.item}"
                  />
+
+           <label for="item${counter}"> 
+             <c:out value="${row.item} ${row.price}" />
+           </label>
 
           <c:set var="counter" value="${counter + 1}" scope="page" />
           <!-- tr>
