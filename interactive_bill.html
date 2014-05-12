@@ -15,10 +15,14 @@
 
     <div data-role="main" class="ui-content">
         <form id="bill-items">
-            <input type="checkbox" name="item0" id="item0" data-theme="a" data-price="10.99">
-            <label for="item0">Food Item 1 $10.99</label>
-            <input type="checkbox" name="item1" id="item1" data-theme="a" data-price="19.94">
-            <label for="item1">Drink Item 1 $19.94</label>
+            <div data-role="fieldcontain">
+                <fieldset data-role="controlgroup">
+                    <input type="checkbox" name="items" id="item0" data-theme="a" data-price="10.99" value="item-name">
+                    <label for="item0">Food Item 1 $10.99</label>
+                    <input type="checkbox" name="items" id="item1" data-theme="a" data-price="19.94" value="item-name">
+                    <label for="item1">Drink Item 1 $19.94</label>
+                </fieldset>
+            </div>
         </form>
     </div>
 
@@ -37,7 +41,7 @@
             $('#total').html((total_bill - item_cost) + '');
         }
 
-    });
+    )});
 </script>
 
 </body>
