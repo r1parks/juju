@@ -57,7 +57,7 @@
         <c:forEach var="row" items="${result.rows}">
           <input type="checkbox" 
                  name="items"
-                 id="<% =counter %>" 
+                 id="${counter}" 
                  data-price="${row.price}"
                  value="${row.item}"
                  />
