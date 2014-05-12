@@ -40,12 +40,6 @@
       <h1>Bill</h1>
     </div>
     <div id="bill">
-      <table border="" width="100%">
-        <tr>
-           <th>Item</th>
-           <th>Price</th>
-        </tr>
-      </table>
       <form id="bill-items">
         <sql:setDataSource var="database" driver="com.mysql.jdbc.Driver"
              url="jdbc:mysql://localhost/juju"
@@ -63,14 +57,10 @@
                  />
 
            <label for="item${counter}"> 
-             <c:out value="${row.item} ${row.price}" />
+             <c:out value="${row.item} $${row.price}" />
            </label>
 
           <c:set var="counter" value="${counter + 1}" scope="page" />
-          <!-- tr>
-             <td><c:out value="${row.item}"/></td>
-             <td>$<c:out value="${row.price}"/></td>
-          </tr -->
         </c:forEach>
       </form>
     </div>
